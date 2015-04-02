@@ -16,7 +16,7 @@ light = ['300:', num2str(var(1)+var(2)), ' 800:',num2str(var(1)+var(2))];
 mycell = {ro_s, ro_d, alphau,light};
 
 T = cell2table(mycell, 'VariableNames', {'ro_s' 'ro_d' 'alphau' 'light'});
-writetable(T,'/scratch/gk925/render-toolbox/sphere_3params_Conditions.txt','Delimiter','\t')
+writetable(T,'/scratch/gk925/hpc_test/sphere_3params_Conditions.txt','Delimiter','\t')
 %% Rendering bit
 
 % Set preferences
