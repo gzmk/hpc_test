@@ -60,7 +60,7 @@ montageFile = [montageName '.png'];
     MakeMontage(radianceDataFiles, montageFile, toneMapFactor, isScale, hints);
 
 % load the monochromatic image and display it
-imPath = ['/scratch/gk925/', hints.recipeName, '/renderings/Mitsuba/test_sphere-001.mat']
+imPath = ['/scratch/gk925/render-toolbox', hints.recipeName, '/renderings/Mitsuba/test_sphere-001.mat']
 load(imPath, 'multispectralImage');
 im2 = multispectralImage;
 figure;imshow(im2(:,:,1))
