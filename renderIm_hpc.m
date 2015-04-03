@@ -59,6 +59,8 @@ montageFile = [montageName '.png'];
 [SRGBMontage, XYZMontage] = ...
     MakeMontage(radianceDataFiles, montageFile, toneMapFactor, isScale, hints);
 
+return
+
 % load the monochromatic image and display it
 % imPath = ['/scratch/gk925/render-toolbox/', hints.recipeName, '/renderings/Mitsuba/test_sphere-001.mat']
 % load(imPath, 'multispectralImage');
