@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#PBS -V
+#PBS -N rendering-test
+#PBS -l nodes=1:ppn=1,mem=2GB,walltime=01:00:00
+
+module purge
+module load centos/bin
+module load matlab/2014a
+
+cd /scratch/gk925/hpc_test
+
+xvfb-run --server-args="-screen 0 1024x768x24" matlab -nodisplay -r "gk_hpc_conf; renderIm_hpc; exit;" > output.log 2>&1
+
+exit
