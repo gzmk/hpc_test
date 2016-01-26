@@ -9,10 +9,14 @@ sprintf('The new variables are: ro_s: %f ro_d: %f alphau: %f', var(1), var(2), v
 var = [0.0760; 0.2168; 0.1573]; % this is for test
 
 % THIS IS FOR MULTISPECTRAL RENDERING
-ro_s = ['300:',num2str(var(1)/(var(1)+var(2))),' 800:',num2str(var(1)/(var(1)+var(2)))];
-ro_d = ['300:', num2str(var(2)/(var(1)+var(2))), ' 800:', num2str(var(2)/(var(1)+var(2)))];
-alphau = var(3); % alphau and alphav should always be the same value for isotropic brdf
-light = ['300:', num2str(var(1)+var(2)), ' 800:',num2str(var(1)+var(2))];
+% ro_s = ['300:',num2str(var(1)/(var(1)+var(2))),' 800:',num2str(var(1)/(var(1)+var(2)))];
+% ro_d = ['300:', num2str(var(2)/(var(1)+var(2))), ' 800:', num2str(var(2)/(var(1)+var(2)))];
+% alphau = var(3); % alphau and alphav should always be the same value for isotropic brdf
+% light = ['300:', num2str(var(1)+var(2)), ' 800:',num2str(var(1)+var(2))];
+ro_s = 0.5;
+ro_d = 0.5
+alphau = var(3);
+light = 1;
 mycell = {ro_s, ro_d, alphau,light};
 
 T = cell2table(mycell, 'VariableNames', {'ro_s' 'ro_d' 'alphau' 'light'});
@@ -20,7 +24,7 @@ writetable(T,'/scratch/gk925/hpc_test/sphere_3params_Conditions.txt','Delimiter'
 %% Rendering bit
 
 % Set preferences
-setpref('RenderToolbox3', 'workingFolder', '/scratch/gk925/render-toolbox');
+setpref('RenderToolbox3', 'workingFolder', '/scratch/gk925/hpc_test');
 
 % use this scene and condition file. 
 parentSceneFile = 'test_sphere.dae';
