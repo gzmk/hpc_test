@@ -16,7 +16,7 @@ var = [0.0760; 0.2168; 0.1573]; % this is for test
 ro_s = 0.5;
 ro_d = 0.5
 alphau = var(3);
-light = 1;
+light = var(1)+var(2);
 mycell = {ro_s, ro_d, alphau,light};
 
 T = cell2table(mycell, 'VariableNames', {'ro_s' 'ro_d' 'alphau' 'light'});
